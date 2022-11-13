@@ -4,11 +4,11 @@
   display: flex;
   justify-content: space-between; /*first default*/
   align-items: center; /*secondory default*/
-  padding: 8px 50px;
+  padding: 8px 5vw;
   border-bottom: 1px solid #eaeaea;
 }
 .header h1 {
-  font-size: 25px;
+  font-size: 24px;
   margin-right: 25px;
 }
 .nav {
@@ -47,7 +47,8 @@
 .search input {
   border-radius: 15px;
   border-color: #dfdfdf;
-  width: 250px;
+  width: 20vw;
+  min-width: 180px;
   height: 30px;
   padding: 0 18px;
   outline: none;
@@ -70,7 +71,7 @@
   border-radius: 8px;
   display: inline-flex;
   align-items: center;
-  padding: 0 12px;
+  padding: 0 10px;
   font-size: 14px;
   font-weight: 500;
   line-height: 1.5;
@@ -80,15 +81,47 @@
 
 .menu .btn1 {
   box-sizing: border-box;
-  background-color: #4a4a4a;
-  color: #fff;
-  border: 2px solid #4a4a4a;
-  margin-left: 20px;
+  background-color: #fff;
+  font-weight: 600;
 }
-
 .menu .btn2 {
   box-sizing: border-box;
-  background-color: #fff;
-  color: #000;
-  border: 2px solid #d3d3d3;
+  background-color: #4a4a4a;
+  color: #fff;
+  border: 1px solid #4a4a4a;
+}
+
+@media screen and (max-width: 780px) {
+  .header h1 {
+    font-size: 18px;
+    margin-right: 16px;
+  }
+  .nav li a {
+    font-size: 15px;
+  }
+  .menu .btn1 {
+    box-sizing: border-box;
+    background-color: #4a4a4a;
+    color: #fff;
+    border: 1px solid #4a4a4a;
+    font-weight: 500;
+  }
+  .menu .btn2 {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .header h1 {
+    margin-right: 8px;
+  }
+  .nav li {
+    margin-right: 15px;
+  }
+  .search {
+    display: none;
+  }
+  .menu .btn1 {
+    padding: 0 8px;
+  }
 }

@@ -1,0 +1,22 @@
+.showing_type {
+  display: flex;
+  align-items: center;
+  margin-top: 18px;
+}
+.showing_type span {
+  color: #bdbdbd;
+  margin-left: 6px;
+}
+.showing_type .clicked {
+  border-bottom: 1px solid #000;
+}
+.showing_type .clicked span {
+  color: #000;
+}
+.showing_type button {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  padding: 10px 7px;
+  cursor: pointer;
+}

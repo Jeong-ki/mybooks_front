@@ -1,6 +1,5 @@
 .cont_select {
   position: relative;
-  /* width: 100px; */
   margin-right: 5px;
 }
 
@@ -42,10 +41,13 @@
   border-radius: 10px;
   background-color: #fff;
   padding-bottom: 4px;
+  z-index: 100;
 }
-
 .btn_select.on {
-  /* background: url("../../public/image/arrow.png") center right 14px no-repeat; */
+  font-weight: 600;
+  color: #515be0;
+  border: 1px solid #515be0;
+  outline: 3px solid #e4e5ff;
 }
 
 .btn_select.on + .list_member {
@@ -66,13 +68,15 @@
   border-radius: 8px;
   cursor: pointer;
   text-align: left;
-  /* 말줄임 */
-  /* white-space: nowrap;
-  text-overflow: ellipsis;
-  overflow: hidden; */
 }
 
 .list_member li button:hover,
 .list_member li button:focus {
-  background-color: #f8e4ff;
+  background-color: #e4e5ff;
+}
+
+@media screen and (max-width: 627px) {
+  .btn_select {
+    margin-bottom: 5px;
+  }
 }

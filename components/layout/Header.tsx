@@ -18,7 +18,7 @@ export default function Header() {
         </li>
         <li>
           <div className={styles.search}>
-            <input type="text" id="search" placeholder="Title or Category" />
+            <input type="text" id="search" placeholder="Title or Description" />
             <label htmlFor="search">
               <Image src={Search} alt="" width={18} height={18} />
             </label>
@@ -26,8 +26,8 @@ export default function Header() {
         </li>
       </ul>
       <div className={styles.menu}>
-        <button className={styles.btn1}>SignUp</button>
-        <button className={styles.btn2}>Login</button>
+        <button className={styles.btn1}>Sign In</button>
+        <button className={styles.btn2}>Sign Up</button>
       </div>
     </header>
   );
