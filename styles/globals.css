@@ -18,7 +18,21 @@ a {
 main {
   min-height: 100vh;
   /* background: orange; */
-  padding: 3rem 1rem;
+  padding: 2.5rem 1rem;
+}
+
+button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+}
+ul {
+  padding: 0px;
+  margin: 0px;
+  list-style: none;
 }
 
 @media (prefers-color-scheme: dark) {

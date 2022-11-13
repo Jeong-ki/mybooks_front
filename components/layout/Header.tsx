@@ -16,16 +16,18 @@ export default function Header() {
         <li className={styles.item}>
           <a href="#">Run Code</a>
         </li>
+        <li>
+          <div className={styles.search}>
+            <input type="text" id="search" placeholder="Title or Category" />
+            <label htmlFor="search">
+              <Image src={Search} alt="" width={18} height={18} />
+            </label>
+          </div>
+        </li>
       </ul>
       <div className={styles.menu}>
-        <div className={styles.search}>
-          <input type="text" id="search" placeholder="Title or Category" />
-          <label htmlFor="search">
-            <Image src={Search} alt="" width={18} height={18} />
-          </label>
-        </div>
-        <button className={styles.btn1}>회원가입</button>
-        <button className={styles.btn2}>로그인</button>
+        <button className={styles.btn1}>SignUp</button>
+        <button className={styles.btn2}>Login</button>
       </div>
     </header>
   );

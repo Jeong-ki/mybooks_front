@@ -9,7 +9,7 @@
 }
 .header h1 {
   font-size: 25px;
-  margin-right: 30px;
+  margin-right: 25px;
 }
 .nav {
   list-style: none;
@@ -19,7 +19,7 @@
   align-items: center;
 }
 .nav li {
-  margin-right: 15px;
+  margin-right: 20px;
   transition: transform 1s ease;
 }
 .nav li a:hover {
@@ -41,9 +41,10 @@
 
 .search {
   position: relative;
+  margin-top: 5px;
 }
 
-.menu input {
+.search input {
   border-radius: 15px;
   border-color: #dfdfdf;
   width: 250px;
@@ -54,10 +55,10 @@
   font-family: inherit;
   border: 1px solid #d3d3d3;
 }
-.menu input::placeholder {
+.search input::placeholder {
   color: #a3a3a3;
 }
-.menu label {
+.search label {
   position: absolute;
   right: 12px;
   top: 6px;

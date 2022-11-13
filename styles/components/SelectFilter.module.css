@@ -1,0 +1,78 @@
+.cont_select {
+  position: relative;
+  /* width: 100px; */
+  margin-right: 5px;
+}
+
+.btn_select {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 5px 8px 5px 10px;
+  font-size: 12px;
+  line-height: 14px;
+  background-color: #fff;
+  border: 1px solid #c4c4c4;
+  box-sizing: border-box;
+  border-radius: 30px;
+  cursor: pointer;
+  text-align: left;
+  color: #bdbdbd;
+}
+
+.btn_select:hover,
+.btn_select:focus {
+  border: 1px solid #515be0;
+  outline: 3px solid #e4e5ff;
+}
+
+.btn_select img {
+  margin-left: 4px;
+  margin-top: 2px;
+}
+
+.list_member {
+  display: block;
+  position: absolute;
+  top: 30px;
+  left: 0;
+  border: 1px solid #c4c4c4;
+  box-sizing: border-box;
+  box-shadow: 4px 4px 14px rgba(0, 0, 0, 0.15);
+  border-radius: 10px;
+  background-color: #fff;
+  padding-bottom: 4px;
+}
+
+.btn_select.on {
+  /* background: url("../../public/image/arrow.png") center right 14px no-repeat; */
+}
+
+.btn_select.on + .list_member {
+  display: block;
+}
+
+.list_member li {
+  height: 35px;
+  padding: 5px 8px;
+  box-sizing: border-box;
+}
+
+.list_member li button {
+  width: 100%;
+  padding: 7px 10px;
+  border: none;
+  background-color: #fff;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align: left;
+  /* 말줄임 */
+  /* white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden; */
+}
+
+.list_member li button:hover,
+.list_member li button:focus {
+  background-color: #f8e4ff;
+}
