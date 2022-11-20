@@ -3,8 +3,8 @@ export interface AlgorithmList {
     title: string;
     description: string;
     status: string;
-    category: string;
-    level: number;
+    myRating: number;
+    avgRating: number;
     bookmark: boolean;
     created: string;
   }[];

@@ -14,7 +14,10 @@ export default function Header() {
           <a href="#">홈</a>
         </li>
         <li className={styles.item}>
-          <a href="#">통계</a>
+          <a href="#">독서통계</a>
+        </li>
+        <li className={styles.item}>
+          <a href="#">어워즈</a>
         </li>
       </ul>
       <div className={styles.search}>
@@ -28,8 +31,8 @@ export default function Header() {
         </label>
       </div>
       <div className={styles.menu}>
-        <button className={styles.btn1}>Sign In</button>
-        <button className={styles.btn2}>Sign Up</button>
+        <button className={styles.btn1}>로그인</button>
+        <button className={styles.btn2}>회원가입</button>
       </div>
     </header>
   );

@@ -26,10 +26,10 @@ export default function Home() {
           <CheckType type={showingType} setType={setShowingType} />
           <div className={styles.wrapper_filter}>
             <div className={styles.filter_box}>
-              <SelectFilter title="내 평점" items={FilterList.category} />
-              <SelectFilter title="분류" items={FilterList.level} />
-              <SelectFilter title="상태" items={FilterList.language} />
-              <SelectFilter title="기간" items={FilterList.status} />
+              <SelectFilter title="평점" items={FilterList.myRating} />
+              <SelectFilter title="총 평점" items={FilterList.avgRating} />
+              <SelectFilter title="상태" items={FilterList.status} />
+              <SelectFilter title="기간" items={FilterList.period} />
               <button
                 className={`
                 ${styles.bookmark} 

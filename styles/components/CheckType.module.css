@@ -6,6 +6,7 @@
 .showing_type span {
   color: #bdbdbd;
   margin-left: 6px;
+  margin-top: 3px;
 }
 .showing_type .clicked {
   border-bottom: 1px solid #000;

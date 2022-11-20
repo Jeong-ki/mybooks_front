@@ -43,6 +43,12 @@
   padding-bottom: 4px;
   z-index: 100;
 }
+.list_status {
+  width: 110px;
+}
+.list_period {
+  width: 75px;
+}
 .btn_select.on {
   font-weight: 600;
   color: #515be0;

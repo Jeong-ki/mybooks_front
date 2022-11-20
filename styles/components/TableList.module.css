@@ -17,6 +17,20 @@
 .content_inner th {
   text-align: center;
 }
+.th_title {
+  width: 150px;
+}
+.th_rating {
+  width: 70px;
+}
+.th_status {
+  width: 85px;
+}
+
+.td_desc {
+  overflow: hidden;
+  height: 10px;
+}
 
 .content_inner thead {
   font-weight: bold;

@@ -5,6 +5,21 @@ import BookmarkClick from "../public/image/bookmark_clicked.png";
 import { AlgorithmList } from "../types";
 
 export default function CardList({ data }: AlgorithmList) {
+  const statusName = (name: string) => {
+    if (name === "읽은 책") return styles.read;
+    if (name === "읽는 중") return styles.reading;
+    return styles.wanted;
+  };
+
+  const ratingCount = (num: number) => {
+    let arr = [];
+    for (let i = 0; i < num; i++) {
+      arr.push(<Image src={BookmarkClick} alt="" width={15} height={15} />);
+    }
+
+    return arr;
+  };
+
   return (
     <div className={styles.content_inner}>
       {data.length > 0 &&
@@ -25,30 +40,20 @@ export default function CardList({ data }: AlgorithmList) {
                   height={15}
                 />
               </button>
-              <div className={styles.rated}>
-                내 평점:&nbsp;
-                <Image
-                  src={item.bookmark ? BookmarkClick : Bookmark}
-                  alt=""
-                  width={15}
-                  height={15}
-                />
-                <Image
-                  src={item.bookmark ? BookmarkClick : Bookmark}
-                  alt=""
-                  width={15}
-                  height={15}
-                />
-              </div>
-              <div className={styles.card_info}>
-                <div className={styles.category}>{item.category}</div>
-                <div
-                  className={
-                    item.status === "Done" ? styles.done : styles.doing
-                  }
-                >
-                  {item.status}
+              <div>
+                <div className={styles.rating}>
+                  평점:&nbsp;
+                  {ratingCount(item.myRating)}
                 </div>
+                <p className={styles.avgRating}>총 평점: {item.avgRating}</p>
+              </div>
+              {/* <div className={`${styles.card_info} ${statusName(item.status)}`}> */}
+              <div
+                className={[styles.card_info, statusName(item.status)].join(
+                  " "
+                )}
+              >
+                {item.status}
               </div>
               <p className={styles.created}>2022년 10월 20일</p>
             </div>

@@ -27,7 +27,7 @@ export default function CheckType({ type, setType }: Itype) {
           width={14}
           height={14}
         />
-        <span>Gallery</span>
+        <span>갤러리</span>
       </button>
       <button
         className={type === "table" ? styles.clicked : ""}
@@ -39,7 +39,7 @@ export default function CheckType({ type, setType }: Itype) {
           width={14}
           height={14}
         />
-        <span>Table</span>
+        <span>표</span>
       </button>
     </div>
   );

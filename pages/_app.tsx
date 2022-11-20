@@ -7,7 +7,7 @@ export default function App({ Component, pageProps }: AppProps) {
   return (
     <>
       <Head>
-        <title>Memorithm</title>
+        <title>MyBooks</title>
         <meta name="description" content="Memo Your Algorithm" />
         <link rel="icon" href="/favicon.ico" />
       </Head>

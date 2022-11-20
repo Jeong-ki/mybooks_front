@@ -32,7 +32,8 @@
 .card_data {
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  justify-content: space-evenly;
+  align-items: flex-start;
 }
 
 .book img {
@@ -54,7 +55,7 @@
   cursor: pointer;
 }
 
-.rated {
+.rating {
   margin: 0;
   font-size: 15px;
   line-height: 1.5;
@@ -62,6 +63,11 @@
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
   overflow: hidden;
+}
+.avgRating {
+  margin: 0;
+  font-size: 12px;
+  color: #c3c3c3;
 }
 
 .author {
@@ -71,30 +77,26 @@
 }
 
 .card .card_info {
-  margin: 0;
-  font-size: 14px;
-}
-.card .card_info div {
-  display: inline-block;
   border-radius: 50px;
   margin-right: 5px;
   padding: 2px 5px;
   border: 1px solid;
-  font-size: 13px;
+  font-size: 12px;
 }
-.card .card_info .doing {
-  color: #fff;
-  border-color: #5a5a5a;
-  background-color: #5a5a5a;
-}
-.card .card_info .done {
+
+.card .reading {
   color: #fff;
   border-color: #b7b7b7;
   background-color: #b7b7b7;
 }
+.read {
+  color: #fff;
+  border-color: #5a5a5a;
+  background-color: #5a5a5a;
+}
 
-.card:hover .done,
-.card:hover .doing {
+.card:hover .read,
+.card:hover .reading {
   background-color: #0070f3;
   border-color: #0070f3;
 }

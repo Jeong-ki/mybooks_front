@@ -25,6 +25,12 @@ export default function SelectFilter({ title, items }: Ifilter) {
     setClicked(false);
   };
 
+  const filterName = () => {
+    if (title === "상태") return styles.list_status;
+    if (title === "기간") return styles.list_period;
+    return "";
+  };
+
   useOutsideClick({ ref: listRef, clicked, setClicked });
 
   return (
@@ -44,10 +50,10 @@ export default function SelectFilter({ title, items }: Ifilter) {
         />
       </button>
       {clicked && (
-        <ul className={styles.list_member} ref={listRef}>
+        <ul className={`${styles.list_member} ${filterName()}`} ref={listRef}>
           <li>
             <button type="button" onClick={() => onClickItem(title)}>
-              None
+              없음
             </button>
           </li>
           {items.map((item, i) => (
