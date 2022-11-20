@@ -22,14 +22,14 @@ export default function Home() {
     <div className={styles.main}>
       <div className={styles.content}>
         <div className={styles.content_top}>
-          <h2>Total 23</h2>
+          <h2>총 23권</h2>
           <CheckType type={showingType} setType={setShowingType} />
           <div className={styles.wrapper_filter}>
             <div className={styles.filter_box}>
-              <SelectFilter title="Category" items={FilterList.category} />
-              <SelectFilter title="Level" items={FilterList.level} />
-              <SelectFilter title="Language" items={FilterList.language} />
-              <SelectFilter title="Status" items={FilterList.status} />
+              <SelectFilter title="내 평점" items={FilterList.category} />
+              <SelectFilter title="분류" items={FilterList.level} />
+              <SelectFilter title="상태" items={FilterList.language} />
+              <SelectFilter title="기간" items={FilterList.status} />
               <button
                 className={`
                 ${styles.bookmark} 
@@ -42,10 +42,9 @@ export default function Home() {
                   width={13}
                   height={13}
                 />
-                Bookmark
+                즐겨찾기
               </button>
             </div>
-            <button className={styles.add}>Add</button>
           </div>
         </div>
         {showingType === "gallery" ? (

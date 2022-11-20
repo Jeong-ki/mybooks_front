@@ -8,23 +8,25 @@ export default function Header() {
     <header className={styles.header}>
       <ul className={styles.nav}>
         <li>
-          <h1>Memorithm</h1>
+          <h1>MyBooks</h1>
         </li>
         <li className={styles.item}>
-          <a href="#">Home</a>
+          <a href="#">홈</a>
         </li>
         <li className={styles.item}>
-          <a href="#">Run Code</a>
-        </li>
-        <li>
-          <div className={styles.search}>
-            <input type="text" id="search" placeholder="Title or Description" />
-            <label htmlFor="search">
-              <Image src={Search} alt="" width={18} height={18} />
-            </label>
-          </div>
+          <a href="#">통계</a>
         </li>
       </ul>
+      <div className={styles.search}>
+        <input
+          type="text"
+          id="search"
+          placeholder="책 또는 작가를 입력하세요."
+        />
+        <label htmlFor="search">
+          <Image src={Search} alt="" width={18} height={18} />
+        </label>
+      </div>
       <div className={styles.menu}>
         <button className={styles.btn1}>Sign In</button>
         <button className={styles.btn2}>Sign Up</button>

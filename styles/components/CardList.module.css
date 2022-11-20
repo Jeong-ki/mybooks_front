@@ -10,8 +10,6 @@
 
 .card {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   position: relative;
   padding: 1rem;
   text-align: left;
@@ -21,6 +19,7 @@
   border-radius: 10px;
   transition: color 0.15s ease, border-color 0.15s ease;
   overflow: hidden;
+  min-width: 260px;
 }
 
 .card:hover,
@@ -30,9 +29,22 @@
   border-color: #0070f3;
 }
 
+.card_data {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.book img {
+  margin-right: 15px;
+  border: 1px solid black;
+  height: 120px;
+}
+
 .card h3 {
-  margin: 0 0 0.7rem 0;
-  font-size: 1.25rem;
+  margin: 0;
+  font-size: 16px;
+  overflow: hidden;
 }
 
 .card button {
@@ -42,9 +54,9 @@
   cursor: pointer;
 }
 
-.card p {
+.rated {
   margin: 0;
-  font-size: 1rem;
+  font-size: 15px;
   line-height: 1.5;
   display: -webkit-box;
   -webkit-box-orient: vertical;
@@ -52,17 +64,23 @@
   overflow: hidden;
 }
 
+.author {
+  margin: 0;
+  font-size: 14px;
+  color: #909090;
+}
+
 .card .card_info {
-  display: flex;
-  justify-content: space-between;
-  margin-top: 12px;
+  margin: 0;
   font-size: 14px;
 }
-.card .card_info span {
-  border-radius: 20px;
+.card .card_info div {
+  display: inline-block;
+  border-radius: 50px;
   margin-right: 5px;
   padding: 2px 5px;
   border: 1px solid;
+  font-size: 13px;
 }
 .card .card_info .doing {
   color: #fff;
@@ -80,8 +98,14 @@
   background-color: #0070f3;
   border-color: #0070f3;
 }
+
+.created {
+  margin: 0;
+  font-size: 14px;
+}
+
 /*500이상일때는 2등분*/
-@media screen and (min-width: 650px) {
+@media screen and (min-width: 700px) {
   .content_inner {
     grid-template-columns: 1fr 1fr;
   }
@@ -92,7 +116,7 @@
 }
 
 /*800이상일때는 3등분*/
-@media screen and (min-width: 950px) {
+@media screen and (min-width: 1000px) {
   .content_inner {
     grid-template-columns: 1fr 1fr 1fr;
     /*     grid-template-columns:repeat(4,1fr); */
@@ -100,7 +124,7 @@
 }
 
 /*800이상일때는 4등분*/
-@media screen and (min-width: 1200px) {
+@media screen and (min-width: 1250px) {
   .content_inner {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     /*     grid-template-columns:repeat(4,1fr); */

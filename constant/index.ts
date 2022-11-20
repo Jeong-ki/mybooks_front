@@ -7,23 +7,23 @@ const FilterList = {
 
 const CardDummy = [
   {
-    title: "Brute Force",
+    title: "미움받을 용기",
     description:
       "Check all the substring one by one to see if it has no duplicater.",
-    status: "Done",
-    category: "Recursion",
+    status: "읽은 책",
+    category: "일본 문학",
     level: 2,
     bookmark: true,
-    created: "123",
+    created: "1",
   },
   {
-    title: "누워서 땅따먹기",
+    title: "누워서 땅따먹기123123123123123123",
     description: "네카라쿠배 코딩테스트 실전 01번.",
     status: "Doing",
     category: "Greedy",
     level: 3,
     bookmark: false,
-    created: "456",
+    created: "2",
   },
   {
     title: "test",
@@ -33,7 +33,7 @@ const CardDummy = [
     category: "Recursion",
     level: 2,
     bookmark: true,
-    created: "123",
+    created: "3",
   },
   {
     title: "Brute Force",
@@ -43,7 +43,7 @@ const CardDummy = [
     category: "Recursion",
     level: 2,
     bookmark: true,
-    created: "123",
+    created: "4",
   },
   {
     title: "누워서 땅따먹기",
@@ -52,7 +52,7 @@ const CardDummy = [
     category: "Greedy",
     level: 3,
     bookmark: false,
-    created: "456",
+    created: "5",
   },
 ];
 
