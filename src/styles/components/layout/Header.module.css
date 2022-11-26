@@ -59,10 +59,11 @@
 .search input::placeholder {
   color: #a3a3a3;
 }
-.search label {
+.search img {
   position: absolute;
   right: 12px;
   top: 6px;
+  cursor: pointer;
 }
 
 .menu button {

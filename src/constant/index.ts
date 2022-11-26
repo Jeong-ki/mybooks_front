@@ -23,7 +23,7 @@ const CardDummy = [
     myRating: 3,
     avgRating: 3.5,
     bookmark: false,
-    created: "2",
+    created: "22",
   },
   {
     title: "test",
@@ -33,7 +33,7 @@ const CardDummy = [
     myRating: 5,
     avgRating: 3.5,
     bookmark: true,
-    created: "3",
+    created: "333",
   },
   {
     title: "Brute Force",
@@ -43,7 +43,7 @@ const CardDummy = [
     myRating: 3,
     avgRating: 3.5,
     bookmark: true,
-    created: "4",
+    created: "4444",
   },
   {
     title: "누워서 땅따먹기",
@@ -52,7 +52,7 @@ const CardDummy = [
     myRating: 3,
     avgRating: 3.5,
     bookmark: false,
-    created: "5",
+    created: "55555",
   },
 ];
 

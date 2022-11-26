@@ -1,9 +1,9 @@
 import Image from "next/image";
-import styles from "../styles/components/CheckType.module.css";
-import Category from "../public/image/category.png";
-import CategoryClick from "../public/image/category_click.png";
-import Table from "../public/image/table.png";
-import TableClick from "../public/image/table_click.png";
+import styles from "src/styles/components/CheckType.module.css";
+import Category from "src/public/image/category.png";
+import CategoryClick from "src/public/image/category_click.png";
+import Table from "src/public/image/table.png";
+import TableClick from "src/public/image/table_click.png";
 import { Dispatch, SetStateAction } from "react";
 
 interface Itype {

@@ -43,6 +43,9 @@
   padding-bottom: 4px;
   z-index: 100;
 }
+.list_avg {
+  width: 65px;
+}
 .list_status {
   width: 110px;
 }

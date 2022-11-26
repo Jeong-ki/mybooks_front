@@ -1,9 +1,9 @@
 import Image from "next/image";
 import React, { useRef, useState } from "react";
-import styles from "../styles/components/SelectFilter.module.css";
-import Arrow from "../public/image/arrow.png";
-import ArrowClicked from "../public/image/arrow_clicked.png";
-import useOutsideClick from "../hooks/useOutsideClick";
+import styles from "src/styles/components/SelectFilter.module.css";
+import Arrow from "src/public/image/arrow.png";
+import ArrowClicked from "src/public/image/arrow_clicked.png";
+import useOutsideClick from "src/hooks/useOutsideClick";
 
 interface Ifilter {
   title: string;
@@ -26,6 +26,8 @@ export default function SelectFilter({ title, items }: Ifilter) {
   };
 
   const filterName = () => {
+    if (title === "평점") return styles.list_avg;
+    if (title === "총 평점") return styles.list_period;
     if (title === "상태") return styles.list_status;
     if (title === "기간") return styles.list_period;
     return "";

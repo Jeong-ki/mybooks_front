@@ -1,15 +1,15 @@
 import Image from "next/image";
-import styles from "../styles/Home.module.css";
-import Bookmark from "../public/image/bookmark.png";
-import BookmarkClick from "../public/image/bookmark_clicked.png";
-import SelectFilter from "../components/SelectFilter";
-import { useEffect, useState } from "react";
-import { FilterList } from "../constant";
-import CheckType from "../components/CheckType";
-import CardList from "../components/CardList";
-import TableList from "../components/TableList";
-import { CardDummy } from "../constant";
-import axios from "axios";
+import styles from "src/styles/Home.module.css";
+import Bookmark from "src/public/image/bookmark.png";
+import BookmarkClick from "src/public/image/bookmark_clicked.png";
+import SelectFilter from "src/components/SelectFilter";
+import { useState } from "react";
+import { FilterList } from "src/constant";
+import CheckType from "src/components/CheckType";
+// import CardList from "src/components/CardList";
+import TableList from "src/components/TableList";
+import { CardDummy } from "src/constant";
+import CardList from "src/components/CardList";
 
 export default function Home() {
   const [showingType, setShowingType] = useState("gallery");
@@ -18,19 +18,6 @@ export default function Home() {
   const onClickFilterBookmark = () => {
     setFilterBookmark((val) => !val);
   };
-
-  // 도서 검색 api 호출 테스트
-  useEffect(() => {
-    axios({
-      method: "get",
-      url: "https://dapi.kakao.com/v3/search/book?target=authors", // title, authors
-      params: { query: "기시미 이치로" },
-      headers: {
-        Authorization: "KakaoAK b81da854d6d00141d339e6978e8a2245",
-        "Content-Type": "application/json;charset=UTF-8",
-      },
-    }).then((res) => console.log(res.data.documents));
-  }, []);
 
   return (
     <div className={styles.main}>

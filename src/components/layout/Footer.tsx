@@ -1,5 +1,4 @@
-import styles from "../../styles/components/layout/Footer.module.css";
-import Image from "next/image";
+import styles from "src/styles/components/layout/Footer.module.css";
 
 export default function Footer() {
   return (
