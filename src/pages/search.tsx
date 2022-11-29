@@ -4,22 +4,16 @@ import styles from "src/styles/Search.module.css";
 import { useQuery } from "@tanstack/react-query";
 import { getSearchResult } from "src/api";
 import Image from "next/image";
-
-interface BookApiError {
-  code: string;
-  message: string;
-}
+import { BookApiError, BookInfo } from "src/types";
 
 export default function Search() {
   const router = useRouter();
   const { value } = router.query;
-  console.log(router.query);
-  const { status, data, error } = useQuery(["books"], () =>
+  const { status, data, error } = useQuery([value], () =>
     getSearchResult(value as string)
   );
-  console.log("1", status);
-  console.log("2", data);
-  console.log("3", error);
+
+  console.log(data);
 
   if (status === "loading") {
     return <div>Loading...</div>;
@@ -31,9 +25,9 @@ export default function Search() {
 
   return (
     <div className={styles.content}>
-      <h2>검색 결과 {data.length}건</h2>
-      {data.length > 0
-        ? data.map((book: any, index: number) => (
+      <h2>검색 결과 {data.meta.total_count}건</h2>
+      {data.documents.length > 0
+        ? data.documents.map((book: BookInfo, index: number) => (
             <div key={book.isbn} className={styles.book}>
               <Image
                 src={book.thumbnail}

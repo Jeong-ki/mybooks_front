@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const getSearchResult = (value: string): Promise<any> =>
+export const getSearchResult = (value: string) =>
   axios({
     method: "get",
     url: "https://dapi.kakao.com/v3/search/book", // title, authors
@@ -9,4 +9,4 @@ export const getSearchResult = (value: string): Promise<any> =>
       Authorization: `KakaoAK ${process.env.NEXT_PUBLIC_KAKAO_SEARCH}`,
       "Content-Type": "application/json;charset=UTF-8",
     },
-  }).then((res) => res.data.documents);
+  }).then((res) => res.data);

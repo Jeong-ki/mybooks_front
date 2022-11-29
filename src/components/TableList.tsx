@@ -2,11 +2,9 @@ import styles from "src/styles/components/TableList.module.css";
 import Image from "next/image";
 import Bookmark from "src/public/image/bookmark.png";
 import BookmarkClick from "src/public/image/bookmark_clicked.png";
-import { AlgorithmList } from "src/types";
+import { BookList } from "src/types";
 
-export default function TableList({ data }: AlgorithmList) {
-  console.log(data);
-
+export default function TableList({ data }: BookList) {
   return (
     <div className={styles.content_inner}>
       <table>

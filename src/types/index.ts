@@ -1,4 +1,4 @@
-export interface AlgorithmList {
+export interface BookList {
   data: {
     title: string;
     description: string;
@@ -8,4 +8,24 @@ export interface AlgorithmList {
     bookmark: boolean;
     created: string;
   }[];
+}
+
+export interface BookInfo {
+  authors: string[];
+  contents: string;
+  datetime: string;
+  isbn: string;
+  price: number;
+  publisher: string;
+  sale_price: number;
+  status: string;
+  thumbnail: string;
+  title: string;
+  translators: string[];
+  url: string;
+}
+
+export interface BookApiError {
+  code: string;
+  message: string;
 }

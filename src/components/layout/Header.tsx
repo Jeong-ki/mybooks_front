@@ -10,6 +10,8 @@ export default function Header() {
 
   const routeSearch = () => {
     if (search.length > 0) {
+      console.log("가라고");
+
       router.push({
         pathname: "/search",
         query: { value: search },
@@ -19,6 +21,10 @@ export default function Header() {
 
   const onChangeSearch = (e: React.ChangeEvent) => {
     setSearch((e.target as HTMLInputElement).value);
+  };
+
+  const onKeyDownEnter = (e: React.KeyboardEvent) => {
+    if (e.key === "Enter") routeSearch();
   };
 
   return (
@@ -43,6 +49,7 @@ export default function Header() {
           id="search"
           placeholder="책 또는 작가를 입력하세요."
           onChange={onChangeSearch}
+          onKeyDown={onKeyDownEnter}
         />
         <label htmlFor="search" className="screen_out">
           도서 검색

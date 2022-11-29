@@ -4,6 +4,7 @@ import type { AppProps } from "next/app";
 import Layout from "src/components/layout";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import favicon from "src/public/favicon.ico";
 
 export default function App({ Component, pageProps }: AppProps) {
   const queryClient = new QueryClient();
@@ -13,7 +14,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <Head>
         <title>MyBooks</title>
         <meta name="description" content="Memo Your Algorithm" />
-        <link rel="icon" href="/src/favicon.ico" />
+        <link rel="shortcut icon" type="image/x-icon" href={favicon.src} />
       </Head>
       <Layout>
         <Component {...pageProps} />

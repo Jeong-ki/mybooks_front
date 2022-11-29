@@ -2,9 +2,9 @@ import Image from "next/image";
 import styles from "src/styles/components/CardList.module.css";
 import Bookmark from "src/public/image/bookmark.png";
 import BookmarkClick from "src/public/image/bookmark_clicked.png";
-import { AlgorithmList } from "src/types";
+import { BookList } from "src/types";
 
-export default function CardList({ data }: AlgorithmList) {
+export default function CardList({ data }: BookList) {
   const statusName = (name: string) => {
     if (name === "읽은 책") return styles.read;
     if (name === "읽는 중") return styles.reading;
