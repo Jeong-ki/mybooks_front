@@ -26,7 +26,6 @@
   margin-bottom: 5px;
 }
 .book img {
-  height: 160px;
   margin-right: 26px;
   border: 1px solid #f0f0f0;
 }
@@ -49,4 +48,13 @@
 }
 .author {
   color: rgb(122, 122, 122);
+}
+.none_thumbnail {
+  min-width: 110px;
+  width: 110px;
+  height: 160px;
+  background-color: #bbbbbb;
+  margin-right: 26px;
+  overflow-x: hidden;
+  overflow-y: hidden;
 }

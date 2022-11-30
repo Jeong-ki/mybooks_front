@@ -29,12 +29,16 @@ export default function Search() {
       {data.documents.length > 0
         ? data.documents.map((book: BookInfo, index: number) => (
             <div key={book.isbn} className={styles.book}>
-              <Image
-                src={book.thumbnail}
-                width={160}
-                height={160}
-                alt={`${index + 1}번째 책`}
-              />
+              {book.thumbnail ? (
+                <Image
+                  src={book.thumbnail}
+                  width={110}
+                  height={160}
+                  alt={`${index + 1}번째 책`}
+                />
+              ) : (
+                <div className={styles.none_thumbnail}></div>
+              )}
               <div className={styles.book_info}>
                 <div>
                   <h3>{book.title}</h3>
