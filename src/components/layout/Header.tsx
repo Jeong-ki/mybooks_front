@@ -10,8 +10,6 @@ export default function Header() {
 
   const routeSearch = () => {
     if (search.length > 0) {
-      console.log("가라고");
-
       router.push({
         pathname: "/search",
         query: { value: search },
