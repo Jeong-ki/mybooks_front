@@ -9,14 +9,15 @@ export default function Search() {
   const router = useRouter();
   const bookName = router.query.value as string;
 
-  const { data, status, fetchNextPage, isFetchingNextPage } = useInfiniteQuery(
-    [bookName],
-    ({ pageParam = 1 }) => fetchBookList(bookName, pageParam),
-    {
-      getNextPageParam: (lastPage) =>
-        !lastPage.idEnd ? lastPage.nextPage : undefined,
-    }
-  );
+  const { data, status, fetchNextPage, hasNextPage, isFetchingNextPage } =
+    useInfiniteQuery(
+      [bookName],
+      ({ pageParam = 1 }) => fetchBookList(bookName, pageParam),
+      {
+        getNextPageParam: (lastPage) =>
+          !lastPage.idEnd ? lastPage.nextPage : undefined,
+      }
+    );
 
   if (status === "loading") {
     return <div>Loading...</div>;
@@ -35,7 +36,7 @@ export default function Search() {
             <BookList books={bookList.books} key={index} />
           ))
         : null}
-      <button onClick={() => fetchNextPage()} disabled={isFetchingNextPage}>
+      <button onClick={() => fetchNextPage()} disabled={!hasNextPage}>
         더보기 버튼
       </button>
       {/* MEMO: 데이터 로딩 컴포넌트 구현 */}

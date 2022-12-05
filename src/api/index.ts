@@ -15,7 +15,7 @@ export const fetchBookList = async (bookName: string, pageParam: number) => {
   return {
     books: res.data.documents,
     nextPage: pageParam + 1,
-    idEnd: res.data.meta.id_end,
+    idEnd: res.data.meta.is_end,
     total: res.data.meta.total_count,
   };
 };
