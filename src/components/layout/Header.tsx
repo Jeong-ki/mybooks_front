@@ -37,9 +37,9 @@ export default function Header() {
         <li className={styles.item}>
           <a href="#">독서통계</a>
         </li>
-        <li className={styles.item}>
+        {/* <li className={styles.item}>
           <a href="#">어워즈</a>
-        </li>
+        </li> */}
       </ul>
       <div className={styles.search}>
         <input

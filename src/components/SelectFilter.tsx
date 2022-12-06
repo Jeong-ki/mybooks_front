@@ -4,13 +4,21 @@ import styles from "src/styles/components/SelectFilter.module.css";
 import Arrow from "src/public/image/arrow.png";
 import ArrowClicked from "src/public/image/arrow_clicked.png";
 import useOutsideClick from "src/hooks/useOutsideClick";
+import { useFilterStore } from "src/store";
 
 interface Ifilter {
   title: string;
-  items: string[];
+  items: { id: number | string; text: string }[];
+}
+
+interface AvgFilter {
+  average: number;
+  setAverage: (average: number) => number;
 }
 
 export default function SelectFilter({ title, items }: Ifilter) {
+  const { average, setAverage }: AvgFilter = useFilterStore() as AvgFilter;
+
   const [clicked, setClicked] = useState(false);
   const [selected, setSelected] = useState(title);
 
@@ -20,9 +28,13 @@ export default function SelectFilter({ title, items }: Ifilter) {
     setClicked((val) => !val);
   };
 
-  const onClickItem = (item: string) => {
-    setSelected(item);
+  const onClickItem = (item: { id: number | string; text: string }) => {
+    console.log(item);
+    setSelected(item.text);
     setClicked(false);
+
+    // MEMO: 분기처리 어떻게 할지 고민 ... 필터에선 총 네가지 분기 필요
+    if (typeof item.id === "number") setAverage(item.id);
   };
 
   const filterName = () => {
@@ -54,14 +66,17 @@ export default function SelectFilter({ title, items }: Ifilter) {
       {clicked && (
         <ul className={`${styles.list_member} ${filterName()}`} ref={listRef}>
           <li>
-            <button type="button" onClick={() => onClickItem(title)}>
+            <button
+              type="button"
+              onClick={() => onClickItem({ id: 0, text: title })}
+            >
               없음
             </button>
           </li>
           {items.map((item, i) => (
             <li key={i}>
               <button type="button" onClick={() => onClickItem(item)}>
-                {item}
+                {item.text}
               </button>
             </li>
           ))}

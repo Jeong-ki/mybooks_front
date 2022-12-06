@@ -6,10 +6,10 @@ import SelectFilter from "src/components/SelectFilter";
 import { useState } from "react";
 import { FilterList } from "src/constant";
 import CheckType from "src/components/CheckType";
-// import CardList from "src/components/CardList";
 import TableList from "src/components/TableList";
 import { CardDummy } from "src/constant";
 import CardList from "src/components/CardList";
+import { useFilterStore } from "src/store";
 
 export default function Home() {
   const [showingType, setShowingType] = useState("gallery");

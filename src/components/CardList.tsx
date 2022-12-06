@@ -2,6 +2,11 @@ import Image from "next/image";
 import styles from "src/styles/components/CardList.module.css";
 import Bookmark from "src/public/image/bookmark.png";
 import BookmarkClick from "src/public/image/bookmark_clicked.png";
+import Star1 from "src/public/image/star_1.png";
+import Star2 from "src/public/image/star_2.png";
+import Star3 from "src/public/image/star_3.png";
+import Star4 from "src/public/image/star_4.png";
+import Star5 from "src/public/image/star_5.png";
 import { BookList } from "src/types";
 
 export default function CardList({ data }: BookList) {
@@ -11,6 +16,8 @@ export default function CardList({ data }: BookList) {
     return styles.wanted;
   };
 
+  const Stars = [Star1, Star2, Star3, Star4, Star5];
+
   return (
     <div className={styles.content_inner}>
       {data.length > 0
@@ -18,7 +25,7 @@ export default function CardList({ data }: BookList) {
             <div className={styles.card} key={item.created}>
               <div className={styles.book}>
                 <Image
-                  src="https://search1.kakaocdn.net/thumb/R120x174.q85/?fname=http%3A%2F%2Ft1.daumcdn.net%2Flbook%2Fimage%2F1467038"
+                  src={item.thumbnail}
                   width={85}
                   height={120}
                   alt="책"
@@ -40,7 +47,12 @@ export default function CardList({ data }: BookList) {
                 <div>
                   <div className={styles.rating}>
                     평점:&nbsp;
-                    <Image src={BookmarkClick} alt="" width={15} height={15} />
+                    <Image
+                      src={Stars[item.myRating - 1]}
+                      alt=""
+                      width={14 * item.myRating}
+                      height={14}
+                    />
                   </div>
                   <p className={styles.avgRating}>총 평점: {item.avgRating}</p>
                 </div>
