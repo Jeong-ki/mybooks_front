@@ -28,6 +28,7 @@ const FilterList = {
 
 const CardDummy = [
   {
+    id: 1,
     thumbnail:
       "https://search1.kakaocdn.net/thumb/R120x174.q85/?fname=http%3A%2F%2Ft1.daumcdn.net%2Flbook%2Fimage%2F1467038",
     title: "미움받을 용기",
@@ -37,9 +38,10 @@ const CardDummy = [
     myRating: 1,
     avgRating: 1.5,
     bookmark: true,
-    created: "1",
+    created: "2022-12-18",
   },
   {
+    id: 2,
     thumbnail:
       "https://search1.kakaocdn.net/thumb/R120x174.q85/?fname=http%3A%2F%2Ft1.daumcdn.net%2Flbook%2Fimage%2F1467038",
     title: "누워서 떡먹기떡먹기떡먹기",
@@ -48,9 +50,10 @@ const CardDummy = [
     myRating: 2,
     avgRating: 2.5,
     bookmark: false,
-    created: "22",
+    created: "2022-12-18",
   },
   {
+    id: 3,
     thumbnail:
       "https://search1.kakaocdn.net/thumb/R120x174.q85/?fname=http%3A%2F%2Ft1.daumcdn.net%2Flbook%2Fimage%2F1467038",
     title: "test",
@@ -60,9 +63,10 @@ const CardDummy = [
     myRating: 3,
     avgRating: 3.5,
     bookmark: false,
-    created: "333",
+    created: "2022-12-18",
   },
   {
+    id: 4,
     thumbnail:
       "https://search1.kakaocdn.net/thumb/R120x174.q85/?fname=http%3A%2F%2Ft1.daumcdn.net%2Flbook%2Fimage%2F1467038",
     title: "Brute Force",
@@ -72,9 +76,10 @@ const CardDummy = [
     myRating: 4,
     avgRating: 4.5,
     bookmark: true,
-    created: "4444",
+    created: "2022-12-18",
   },
   {
+    id: 5,
     thumbnail:
       "https://search1.kakaocdn.net/thumb/R120x174.q85/?fname=http%3A%2F%2Ft1.daumcdn.net%2Flbook%2Fimage%2F1467038",
     title: "누워서 땅따먹기",
@@ -83,7 +88,7 @@ const CardDummy = [
     myRating: 5,
     avgRating: 5,
     bookmark: false,
-    created: "55555",
+    created: "2022-12-18",
   },
 ];
 

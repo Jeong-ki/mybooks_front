@@ -1,5 +1,6 @@
 export interface BookList {
   data: {
+    id: number;
     thumbnail: string;
     title: string;
     description: string;

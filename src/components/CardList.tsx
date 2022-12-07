@@ -22,7 +22,7 @@ export default function CardList({ data }: BookList) {
     <div className={styles.content_inner}>
       {data.length > 0
         ? data.map((item) => (
-            <div className={styles.card} key={item.created}>
+            <div className={styles.card} key={item.id}>
               <div className={styles.book}>
                 <Image
                   src={item.thumbnail}
@@ -44,26 +44,26 @@ export default function CardList({ data }: BookList) {
                     height={15}
                   />
                 </button>
-                <div>
-                  <div className={styles.rating}>
-                    평점:&nbsp;
-                    <Image
-                      src={Stars[item.myRating - 1]}
-                      alt=""
-                      width={14 * item.myRating}
-                      height={14}
-                    />
+                <div className={styles.rating}>
+                  평점:&nbsp;
+                  <Image
+                    src={Stars[item.myRating - 1]}
+                    alt=""
+                    width={14 * item.myRating}
+                    height={14}
+                  />
+                </div>
+                <p className={styles.avgRating}>총 평점: {item.avgRating}</p>
+                <div className={styles.date_status}>
+                  <div
+                    className={[styles.card_info, statusName(item.status)].join(
+                      " "
+                    )}
+                  >
+                    {item.status}
                   </div>
-                  <p className={styles.avgRating}>총 평점: {item.avgRating}</p>
+                  <p className={styles.created}>{item.created}</p>
                 </div>
-                <div
-                  className={[styles.card_info, statusName(item.status)].join(
-                    " "
-                  )}
-                >
-                  {item.status}
-                </div>
-                <p className={styles.created}>2022년 10월 20일</p>
               </div>
             </div>
           ))
