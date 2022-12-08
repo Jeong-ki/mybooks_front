@@ -82,6 +82,7 @@
 .card .card_info {
   border-radius: 15px;
   margin-right: 5px;
+  margin-left: -1px;
   padding: 2px 5px;
   border: 1px solid;
   font-size: 12px;
@@ -92,7 +93,7 @@
   border-color: #b7b7b7;
   background-color: #b7b7b7;
 }
-.read {
+.card .read {
   color: #fff;
   border-color: #5a5a5a;
   background-color: #5a5a5a;

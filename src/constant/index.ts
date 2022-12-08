@@ -59,7 +59,7 @@ const CardDummy = [
     title: "test",
     description:
       "Check all the substring one by one to see if it has no duplicater Check all the substring one by one to see if it has no duplicater Check all the substring one by one to see if it has no duplicater",
-    status: "읽고 싶은 책",
+    status: "읽을 책",
     myRating: 3,
     avgRating: 3.5,
     bookmark: false,
@@ -72,7 +72,7 @@ const CardDummy = [
     title: "Brute Force",
     description:
       "Check all the substring one by one to see if it has no duplicater.",
-    status: "Done",
+    status: "읽은 책",
     myRating: 4,
     avgRating: 4.5,
     bookmark: true,
@@ -84,7 +84,7 @@ const CardDummy = [
       "https://search1.kakaocdn.net/thumb/R120x174.q85/?fname=http%3A%2F%2Ft1.daumcdn.net%2Flbook%2Fimage%2F1467038",
     title: "누워서 땅따먹기",
     description: "네카라쿠배 코딩테스트 실전 01번.",
-    status: "Doing",
+    status: "읽는 중",
     myRating: 5,
     avgRating: 5,
     bookmark: false,

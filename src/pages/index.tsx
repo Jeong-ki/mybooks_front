@@ -1,23 +1,16 @@
-import Image from "next/image";
 import styles from "src/styles/Home.module.css";
-import Bookmark from "src/public/image/bookmark.png";
-import BookmarkClick from "src/public/image/bookmark_clicked.png";
-import SelectFilter from "src/components/SelectFilter";
 import { useState } from "react";
 import { FilterList } from "src/constant";
+import SelectFilter from "src/components/SelectFilter";
 import CheckType from "src/components/CheckType";
 import TableList from "src/components/TableList";
-import { CardDummy } from "src/constant";
 import CardList from "src/components/CardList";
+import BookmarkFilterBtn from "src/components/BookmarkFilterBtn";
+import { CardDummy } from "src/constant";
 import { useFilterStore } from "src/store";
 
 export default function Home() {
   const [showingType, setShowingType] = useState("gallery");
-  const [filterBookmark, setFilterBookmark] = useState(false);
-
-  const onClickFilterBookmark = () => {
-    setFilterBookmark((val) => !val);
-  };
 
   return (
     <div className={styles.main}>
@@ -31,20 +24,7 @@ export default function Home() {
               <SelectFilter title="총 평점" items={FilterList.avgRating} />
               <SelectFilter title="상태" items={FilterList.status} />
               <SelectFilter title="기간" items={FilterList.period} />
-              <button
-                className={`
-                ${styles.bookmark} 
-                ${filterBookmark ? styles.on : ""}`}
-                onClick={onClickFilterBookmark}
-              >
-                <Image
-                  src={filterBookmark ? BookmarkClick : Bookmark}
-                  alt=""
-                  width={13}
-                  height={13}
-                />
-                즐겨찾기
-              </button>
+              <BookmarkFilterBtn />
             </div>
           </div>
         </div>
