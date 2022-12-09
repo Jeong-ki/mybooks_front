@@ -1,5 +1,5 @@
 import styles from "src/styles/Home.module.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FilterList } from "src/constant";
 import SelectFilter from "src/components/SelectFilter";
 import CheckType from "src/components/CheckType";
@@ -7,10 +7,19 @@ import TableList from "src/components/TableList";
 import CardList from "src/components/CardList";
 import BookmarkFilterBtn from "src/components/BookmarkFilterBtn";
 import { CardDummy } from "src/constant";
-import { useFilterStore } from "src/store";
+import { useBookStore } from "src/store";
 
 export default function Home() {
   const [showingType, setShowingType] = useState("gallery");
+  const { myBooks, setBooks, filterBooks }: any = useBookStore();
+
+  console.log(myBooks);
+
+  useEffect(() => {
+    if (CardDummy.length > 0) {
+      setBooks(CardDummy);
+    }
+  }, [setBooks]);
 
   return (
     <div className={styles.main}>
@@ -29,9 +38,9 @@ export default function Home() {
           </div>
         </div>
         {showingType === "gallery" ? (
-          <CardList data={CardDummy} />
+          <CardList bookList={myBooks} />
         ) : (
-          <TableList data={CardDummy} />
+          <TableList bookList={myBooks} />
         )}
       </div>
     </div>

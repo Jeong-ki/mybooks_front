@@ -4,20 +4,23 @@ import styles from "src/styles/components/SelectFilter.module.css";
 import Arrow from "src/public/image/arrow.png";
 import ArrowClicked from "src/public/image/arrow_clicked.png";
 import useOutsideClick from "src/hooks/useOutsideClick";
-import { useFilterStore } from "src/store";
+import { useBookStore } from "src/store";
+// import { useFilterStore } from "src/store";
 
 interface Ifilter {
   title: string;
   items: { id: number | string; text: string }[];
 }
 
-interface AvgFilter {
-  average: number;
-  setAverage: (average: number) => number;
-}
+// interface AvgFilter {
+//   average: number;
+//   setAverage: (average: number) => number;
+// }
 
 export default function SelectFilter({ title, items }: Ifilter) {
-  const { average, setAverage }: AvgFilter = useFilterStore() as AvgFilter;
+  // const { average, setAverage }: AvgFilter = useFilterStore() as AvgFilter;
+
+  const { myBooks, setBooks, filterBooks }: any = useBookStore();
 
   const [clicked, setClicked] = useState(false);
   const [selected, setSelected] = useState(title);
@@ -33,8 +36,9 @@ export default function SelectFilter({ title, items }: Ifilter) {
     setSelected(item.text);
     setClicked(false);
 
+    filterBooks();
     // MEMO: 분기처리 어떻게 할지 고민 ... 필터에선 총 네가지 분기 필요
-    if (typeof item.id === "number") setAverage(item.id);
+    // if (typeof item.id === "number") setAverage(item.id);
   };
 
   const filterName = () => {

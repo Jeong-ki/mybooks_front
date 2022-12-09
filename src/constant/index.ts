@@ -14,9 +14,9 @@ const FilterList = {
     { id: 5, text: "5점" },
   ],
   status: [
-    { id: "done", text: "읽은 책" },
-    { id: "doing", text: "읽는 중" },
-    { id: "wanted", text: "읽고 싶은 책" },
+    { id: 0, text: "읽은 책" },
+    { id: 1, text: "읽는 중" },
+    { id: 2, text: "읽을 책" },
   ],
   period: [
     { id: "1M", text: "1개월" },
