@@ -1,14 +1,17 @@
-import styles from "src/styles/Home.module.css";
+import styles from "src/styles/components/BookmarkFilterBtn.module.css";
 import Bookmark from "src/public/image/bookmark.png";
 import BookmarkClick from "src/public/image/bookmark_clicked.png";
 import Image from "next/image";
 import { useState } from "react";
+import { useBookStore } from "src/store";
 
 export default function BookmarkFilterBtn() {
+  const { filterBooks }: any = useBookStore();
   const [filterBookmark, setFilterBookmark] = useState(false);
 
   const onClickFilterBookmark = () => {
     setFilterBookmark((val) => !val);
+    filterBooks({ type: "bookmark", item: !filterBookmark });
   };
 
   return (
