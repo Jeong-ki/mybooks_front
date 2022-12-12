@@ -1,16 +1,16 @@
 import Image from "next/image";
-import { BookInfo } from "src/types";
+import { KakaoBookInfo } from "src/types";
 import styles from "src/styles/Search.module.css";
 
 interface Books {
-  books: BookInfo[];
+  books: KakaoBookInfo[];
 }
 
 export default function BookList({ books }: Books) {
   return (
     <>
       {books.length > 0
-        ? books.map((book: BookInfo, index: number) => (
+        ? books.map((book: KakaoBookInfo, index: number) => (
             <div key={book.isbn} className={styles.book}>
               {book.thumbnail ? (
                 <Image

@@ -1,15 +1,15 @@
 import { Dispatch, SetStateAction, useEffect } from "react";
 
 interface IoutsideClick {
-  ref: any;
+  ref: React.RefObject<HTMLUListElement>;
   clicked: boolean;
   setClicked: Dispatch<SetStateAction<boolean>>;
 }
 
 const useOutsideClick = ({ ref, clicked, setClicked }: IoutsideClick) => {
   useEffect(() => {
-    function handleClickOutside(event: any) {
-      if (ref.current && !ref.current.contains(event.target)) {
+    function handleClickOutside(event: MouseEvent) {
+      if (ref.current && !ref.current.contains(event.target as Element)) {
         setClicked(false);
       }
     }

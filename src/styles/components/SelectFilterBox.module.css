@@ -1,0 +1,11 @@
+.wrapper_filter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.filter_box {
+  display: flex;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}

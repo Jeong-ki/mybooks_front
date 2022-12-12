@@ -26,13 +26,15 @@ export default function Search() {
     return <div>Error...</div>;
   }
 
+  console.log(data.pages);
+
   return (
     <div className={styles.content}>
       <h2>
         {`"${bookName}"`} 검색 결과 {data.pages[0].total} 건
       </h2>
       {data?.pages.length > 0
-        ? data?.pages.map((bookList: any, index: number) => (
+        ? data?.pages.map((bookList, index) => (
             <BookList books={bookList.books} key={index} />
           ))
         : null}

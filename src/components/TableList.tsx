@@ -4,7 +4,7 @@ import Bookmark from "src/public/image/bookmark.png";
 import BookmarkClick from "src/public/image/bookmark_clicked.png";
 import { BookList } from "src/types";
 
-export default function TableList({ data }: BookList) {
+export default function TableList({ bookList }: { bookList: BookList[] }) {
   return (
     <div className={styles.content_inner}>
       <table>
@@ -19,8 +19,8 @@ export default function TableList({ data }: BookList) {
           </tr>
         </thead>
         <tbody>
-          {data.length > 0 &&
-            data.map((item) => (
+          {bookList.length > 0 &&
+            bookList.map((item: BookList) => (
               <tr key={item.created}>
                 <td>{item.title}</td>
                 <td className={styles.td_desc}>{item.description}</td>

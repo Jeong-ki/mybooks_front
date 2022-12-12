@@ -13,44 +13,6 @@
   margin: 10px 0;
 }
 
-.wrapper_filter {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.filter_box {
-  display: flex;
-  margin: 20px 0;
-  flex-wrap: wrap;
-}
-.filter_box .bookmark {
-  display: flex;
-  align-items: center;
-  padding: 5px 10px 5px 10px;
-  font-size: 12px;
-  line-height: 14px;
-  background-color: #fff;
-  border: 1px solid #c4c4c4;
-  box-sizing: border-box;
-  border-radius: 30px;
-  cursor: pointer;
-  text-align: left;
-  color: #bdbdbd;
-}
-.filter_box .bookmark:hover {
-  border: 1px solid #515be0;
-  outline: 3px solid #e4e5ff;
-}
-.filter_box .bookmark img {
-  margin-right: 3px;
-}
-.filter_box .bookmark.on {
-  font-weight: 600;
-  color: #515be0;
-  border: 1px solid #515be0;
-  outline: 3px solid #e4e5ff;
-}
-
 .content_inner {
   width: 90%;
   max-width: 1240px;
