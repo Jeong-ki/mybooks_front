@@ -1,4 +1,5 @@
 import moment from "moment";
+import { BookList, IBookstore, IFilterBooks } from "src/types";
 import create from "zustand";
 
 export const useBookStore = create((set) => ({
@@ -12,15 +13,15 @@ export const useBookStore = create((set) => ({
     bookmark: false,
   },
 
-  setBooks: (list: any) => {
+  setBooks: (list: BookList[]) => {
     set({ originBookList: [...list], filteredBookList: [...list] });
   },
-  filterBooks: ({ type, item }: any) => {
-    set((state: any) => {
+  filterBooks: ({ type, item }: IFilterBooks) => {
+    set((state: { filterValue: any; originBookList: never[] }) => {
       const filterVal = state.filterValue;
       filterVal[type] = item;
       return {
-        filteredBookList: state.originBookList.filter((data: any) => {
+        filteredBookList: state.originBookList.filter((data: BookList) => {
           return (
             (filterVal.myRating.id
               ? data.myRating === filterVal.myRating.id
@@ -35,7 +36,8 @@ export const useBookStore = create((set) => ({
               ? moment(data.created, "YYYY-MM-DD") >=
                 moment().subtract(
                   filterVal.created.date[0],
-                  filterVal.created.date[1]
+                  filterVal.created
+                    .date[1] as moment.unitOfTime.DurationConstructor
                 )
               : true) &&
             (filterVal.bookmark ? data.bookmark === filterVal.bookmark : true)

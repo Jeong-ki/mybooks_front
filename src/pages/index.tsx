@@ -6,10 +6,13 @@ import CardList from "src/components/CardList";
 import { CardDummy } from "src/constant";
 import { useBookStore } from "src/store";
 import SelectFilterBox from "src/components/SelectFilterBox";
+import { StoreFilteredBookList, StoreSetBooks } from "src/types";
+
+interface IHomeBooks extends StoreFilteredBookList, StoreSetBooks {}
 
 export default function Home() {
   const [showingType, setShowingType] = useState("gallery");
-  const { filteredBookList, setBooks }: any = useBookStore();
+  const { filteredBookList, setBooks } = useBookStore() as IHomeBooks;
   useEffect(() => {
     if (CardDummy.length > 0) {
       setBooks(CardDummy);

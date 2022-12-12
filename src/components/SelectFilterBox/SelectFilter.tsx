@@ -5,19 +5,10 @@ import Arrow from "src/public/image/arrow.png";
 import ArrowClicked from "src/public/image/arrow_clicked.png";
 import useOutsideClick from "src/hooks/useOutsideClick";
 import { useBookStore } from "src/store";
-interface Ifilter {
-  title: string;
-  type: string;
-  items: { id: number; text: string }[];
-}
-
-// interface AvgFilter {
-//   average: number;
-//   setAverage: (average: number) => number;
-// }
+import { Ifilter, StoreFilterBooks } from "src/types";
 
 export default function SelectFilter({ title, type, items }: Ifilter) {
-  const { filterBooks }: any = useBookStore();
+  const { filterBooks } = useBookStore() as StoreFilterBooks;
 
   const [clicked, setClicked] = useState(false);
   const [selected, setSelected] = useState({ id: 0, text: "없음" });

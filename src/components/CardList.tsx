@@ -9,7 +9,7 @@ import Star4 from "src/public/image/star_4.png";
 import Star5 from "src/public/image/star_5.png";
 import { BookList } from "src/types";
 
-export default function CardList({ bookList }: BookList) {
+export default function CardList({ bookList }: { bookList: BookList[] }) {
   const statusName = (name: string) => {
     if (name === "읽은 책") return styles.read;
     if (name === "읽는 중") return styles.reading;
@@ -21,7 +21,7 @@ export default function CardList({ bookList }: BookList) {
   return (
     <div className={styles.content_inner}>
       {bookList.length > 0
-        ? bookList.map((item) => (
+        ? bookList.map((item: BookList) => (
             <div className={styles.card} key={item.id}>
               <div className={styles.book}>
                 <Image
