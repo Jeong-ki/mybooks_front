@@ -12,6 +12,10 @@
   padding: 10px 0 20px;
   border-bottom: 1px solid #e4e5ff;
 }
+.book:last-child {
+  border-bottom: none;
+  margin-bottom: 20px;
+}
 
 .book p {
   font-size: 14px;
@@ -57,4 +61,15 @@
   margin-right: 26px;
   overflow-x: hidden;
   overflow-y: hidden;
+}
+.wrap_btn {
+  display: flex;
+  justify-content: center;
+}
+.more_btn {
+  border: 1px solid black;
+  border-radius: 20px;
+  padding: 10px 100px;
+  font-size: 16px;
+  cursor: pointer;
 }

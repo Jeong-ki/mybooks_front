@@ -1,5 +1,5 @@
 import moment from "moment";
-import { BookList, IBookstore, IFilterBooks } from "src/types";
+import { BookList, IFilterBooks } from "src/types";
 import create from "zustand";
 
 export const useBookStore = create((set) => ({

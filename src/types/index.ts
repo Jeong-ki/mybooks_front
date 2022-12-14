@@ -11,17 +11,17 @@ export interface BookList {
 }
 
 // Store Book Type
-export interface IBookstore {
-  originBookList: BookList[];
-  filteredBookList: BookList[];
-  filterValue: {
-    myRating: { id: number; text: string };
-    avgRating: { id: number; text: string };
-    status: { id: number; text: string };
-    created: { id: number; text: string; date: [number, string] };
-    bookmark: boolean;
-  };
-}
+// export interface IBookstore {
+//   originBookList: BookList[];
+//   filteredBookList: BookList[];
+//   filterValue: {
+//     myRating: { id: number; text: string };
+//     avgRating: { id: number; text: string };
+//     status: { id: number; text: string };
+//     created: { id: number; text: string; date: [number, string] };
+//     bookmark: boolean;
+//   };
+// }
 
 export interface IFilterBooks {
   type: string;
