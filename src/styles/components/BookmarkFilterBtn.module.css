@@ -11,6 +11,7 @@
   cursor: pointer;
   text-align: left;
   color: #bdbdbd;
+  height: 26px;
 }
 .bookmark:hover {
   border: 1px solid #515be0;

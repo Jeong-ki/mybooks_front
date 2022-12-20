@@ -1,7 +1,6 @@
 import { useRouter } from "next/router";
 import React from "react";
 import styles from "src/styles/Search.module.css";
-import comStyles from "src/styles/Common.module.css";
 import { useInfiniteQuery } from "@tanstack/react-query";
 import { fetchBookList } from "src/api";
 import BookList from "src/components/BookList";

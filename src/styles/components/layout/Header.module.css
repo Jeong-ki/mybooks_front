@@ -4,7 +4,7 @@
   display: flex;
   justify-content: space-between; /*first default*/
   align-items: center; /*secondory default*/
-  padding: 8px 5vw;
+  padding: 8px 8vw;
   border-bottom: 1px solid #eaeaea;
 }
 .header h1 {

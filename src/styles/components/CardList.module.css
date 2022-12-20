@@ -1,5 +1,4 @@
 .content_inner {
-  width: 90%;
   max-width: 1240px;
   margin: 0 auto;
   display: grid;
@@ -118,7 +117,7 @@
   font-size: 14px;
 }
 
-/*500이상일때는 2등분*/
+/* 2등분 */
 @media screen and (min-width: 700px) {
   .content_inner {
     grid-template-columns: 1fr 1fr;
@@ -129,7 +128,7 @@
   /* } */
 }
 
-/*800이상일때는 3등분*/
+/* 3등분 */
 @media screen and (min-width: 1000px) {
   .content_inner {
     grid-template-columns: 1fr 1fr 1fr;
@@ -137,8 +136,8 @@
   }
 }
 
-/*800이상일때는 4등분*/
-@media screen and (min-width: 1250px) {
+/* 4등분 */
+@media screen and (min-width: 1350px) {
   .content_inner {
     grid-template-columns: 1fr 1fr 1fr 1fr;
     /*     grid-template-columns:repeat(4,1fr); */

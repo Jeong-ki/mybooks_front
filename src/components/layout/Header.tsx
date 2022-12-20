@@ -3,6 +3,7 @@ import styles from "src/styles/components/layout/Header.module.css";
 import Image from "next/image";
 import Search from "src/public/image/search.png";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 export default function Header() {
   const [search, setSearch] = useState("");
@@ -32,10 +33,10 @@ export default function Header() {
           <h1>MyBooks</h1>
         </li>
         <li className={styles.item}>
-          <a href="#">홈</a>
+          <Link href="/">홈</Link>
         </li>
         <li className={styles.item}>
-          <a href="#">독서통계</a>
+          <Link href="/">독서통계</Link>
         </li>
         {/* <li className={styles.item}>
           <a href="#">어워즈</a>
