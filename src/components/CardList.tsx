@@ -2,12 +2,8 @@ import Image from "next/image";
 import styles from "src/styles/components/CardList.module.css";
 import Bookmark from "src/public/image/bookmark.png";
 import BookmarkClick from "src/public/image/bookmark_clicked.png";
-import Star1 from "src/public/image/star_1.png";
-import Star2 from "src/public/image/star_2.png";
-import Star3 from "src/public/image/star_3.png";
-import Star4 from "src/public/image/star_4.png";
-import Star5 from "src/public/image/star_5.png";
 import { BookList } from "src/types";
+import { StarImgList } from "src/constant";
 
 export default function CardList({ bookList }: { bookList: BookList[] }) {
   const statusName = (name: string) => {
@@ -15,8 +11,6 @@ export default function CardList({ bookList }: { bookList: BookList[] }) {
     if (name === "읽는 중") return styles.reading;
     return styles.wanted;
   };
-
-  const Stars = [Star1, Star2, Star3, Star4, Star5];
 
   return (
     <div className={styles.content_inner}>
@@ -47,7 +41,7 @@ export default function CardList({ bookList }: { bookList: BookList[] }) {
                 <div className={styles.rating}>
                   평점:&nbsp;
                   <Image
-                    src={Stars[item.myRating - 1]}
+                    src={StarImgList[item.myRating - 1]}
                     alt=""
                     width={14 * item.myRating}
                     height={14}

@@ -1,18 +1,34 @@
 import Image from "next/image";
-import { KakaoBookInfo } from "src/types";
+import { KakaoBookInfo, StoreSetBookDetail } from "src/types";
 import styles from "src/styles/Search.module.css";
+import Link from "next/link";
+import { useBookStore } from "src/store";
 
 interface Books {
   books: KakaoBookInfo[];
 }
 
 export default function BookList({ books }: Books) {
+  const { setBookDetail } = useBookStore() as StoreSetBookDetail;
+
   return (
     <>
       {books.length > 0
         ? books.map((book: KakaoBookInfo, index: number) => (
             <div key={book.isbn} className={styles.book}>
-              <a className={styles.inner_book}>
+              {/* <Link
+                href={`/detail/${encodeURIComponent(book.isbn.split(" ")[1])}`}
+                className={styles.inner_book}
+                onClick={() => setBookDetail(book)}
+              > */}
+              <Link
+                href={{
+                  pathname: "/detail/[id]",
+                  query: { book: JSON.stringify(book) },
+                }}
+                as={`/detail/${encodeURIComponent(book.isbn.split(" ")[1])}`}
+                className={styles.inner_book}
+              >
                 {book.thumbnail ? (
                   <Image
                     src={book.thumbnail}
@@ -35,7 +51,7 @@ export default function BookList({ books }: Books) {
                   </p>
                   <p className={styles.description}>{book.contents}</p>
                 </div>
-              </a>
+              </Link>
             </div>
           ))
         : null}

@@ -1,3 +1,9 @@
+import Star1 from "src/public/image/star_1.png";
+import Star2 from "src/public/image/star_2.png";
+import Star3 from "src/public/image/star_3.png";
+import Star4 from "src/public/image/star_4.png";
+import Star5 from "src/public/image/star_5.png";
+
 const FilterList = {
   myRating: [
     { id: 0, text: "없음" },
@@ -97,4 +103,6 @@ const CardDummy = [
   },
 ];
 
-export { FilterList, CardDummy };
+const StarImgList = [Star1, Star2, Star3, Star4, Star5];
+
+export { FilterList, CardDummy, StarImgList };

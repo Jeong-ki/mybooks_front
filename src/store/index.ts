@@ -1,5 +1,5 @@
 import moment from "moment";
-import { BookList, IFilterBooks } from "src/types";
+import { BookList, IFilterBooks, KakaoBookInfo } from "src/types";
 import create from "zustand";
 
 export const useBookStore = create((set) => ({
@@ -16,6 +16,7 @@ export const useBookStore = create((set) => ({
   setBooks: (list: BookList[]) => {
     set({ originBookList: [...list], filteredBookList: [...list] });
   },
+
   filterBooks: ({ type, item }: IFilterBooks) => {
     set((state: { filterValue: any; originBookList: never[] }) => {
       const filterVal = state.filterValue;

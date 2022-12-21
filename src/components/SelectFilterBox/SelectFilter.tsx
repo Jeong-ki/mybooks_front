@@ -10,18 +10,18 @@ import { Ifilter, StoreFilterBooks } from "src/types";
 export default function SelectFilter({ title, type, items }: Ifilter) {
   const { filterBooks } = useBookStore() as StoreFilterBooks;
 
-  const [clicked, setClicked] = useState(false);
+  const [isFocus, setIsFocus] = useState(false);
   const [selected, setSelected] = useState({ id: 0, text: "없음" });
 
   const listRef = useRef<HTMLUListElement>(null);
 
   const onClickSelect = () => {
-    setClicked((val) => !val);
+    setIsFocus((val) => !val);
   };
 
   const onClickItem = (item: { id: number; text: string }) => {
     setSelected(item);
-    setClicked(false);
+    setIsFocus(false);
 
     filterBooks({ type, item });
   };
@@ -34,7 +34,7 @@ export default function SelectFilter({ title, type, items }: Ifilter) {
     return "";
   };
 
-  useOutsideClick({ ref: listRef, clicked, setClicked });
+  useOutsideClick({ ref: listRef, isFocus, setIsFocus });
 
   return (
     <div className={styles.cont_select}>
@@ -50,7 +50,7 @@ export default function SelectFilter({ title, type, items }: Ifilter) {
           height={4}
         />
       </button>
-      {clicked && (
+      {isFocus && (
         <ul className={`${styles.list_member} ${filterName()}`} ref={listRef}>
           {items.map((item, i) => (
             <li key={i}>
