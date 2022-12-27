@@ -1,0 +1,61 @@
+/* 화면 크기 작아졌을 때 처리 필요 */
+/* 이미지 위로 / 정보 아래로 */
+
+.book_detail {
+  display: flex;
+  align-items: center;
+  padding: 35px 10vw;
+  overflow: hidden;
+  min-width: 670px;
+}
+
+.thumbnail_wrapper {
+  width: 180px;
+  height: 230px;
+  background-color: rgb(240, 240, 240);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 40px;
+}
+
+.thumbnail_wrapper img {
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.book_info h2 {
+  margin: 0;
+}
+
+.book_info .author {
+  font-weight: bold;
+  color: #666;
+  margin: 15px 0 0;
+}
+.book_info .author small {
+  font-weight: 400;
+}
+
+.grade {
+  display: flex;
+  align-items: center;
+  margin: 5px 0 10px;
+}
+
+.grade img {
+  margin-right: 5px;
+}
+
+.book_info .total {
+  margin-left: 10px;
+  color: #7d7d7d;
+}
+.detail_info strong {
+  font-weight: 700;
+}
+.detail_info p {
+  margin: 8px 0;
+  font-size: 15px;
+  color: #505050;
+  font-weight: 400;
+}
