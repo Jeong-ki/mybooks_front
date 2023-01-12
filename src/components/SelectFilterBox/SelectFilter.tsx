@@ -5,10 +5,10 @@ import Arrow from "src/public/image/arrow.png";
 import ArrowClicked from "src/public/image/arrow_clicked.png";
 import useOutsideClick from "src/hooks/useOutsideClick";
 import { useBookStore } from "src/store";
-import { Ifilter, StoreFilterBooks } from "src/types";
+import { Ifilter } from "src/types";
 
 export default function SelectFilter({ title, type, items }: Ifilter) {
-  const { filterBooks } = useBookStore() as StoreFilterBooks;
+  const { filterBooks } = useBookStore();
 
   const [isFocus, setIsFocus] = useState(false);
   const [selected, setSelected] = useState({ id: 0, text: "없음" });

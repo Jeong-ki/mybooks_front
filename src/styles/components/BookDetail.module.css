@@ -2,11 +2,22 @@
 /* 이미지 위로 / 정보 아래로 */
 
 .book_detail {
+  position: relative;
   display: flex;
   align-items: center;
-  padding: 35px 10vw;
+  padding: 35px 10vw 60px;
   overflow: hidden;
   min-width: 670px;
+}
+
+.book_detail::after {
+  content: "";
+  width: 315px;
+  border-bottom: 1px solid #e0e0e0;
+  position: absolute;
+  bottom: 1px;
+  left: 50%;
+  transform: translate(-50%, 0);
 }
 
 .thumbnail_wrapper {

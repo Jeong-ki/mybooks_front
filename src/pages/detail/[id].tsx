@@ -1,17 +1,9 @@
 import styles from "src/styles/Detail.module.css";
-import { useRouter } from "next/router";
 import BookDetail from "src/components/BookDetail";
-import { KakaoBookInfo } from "src/types";
-
-/**
- * @todo 내 DB에 저장
- */
+import { useBookStore } from "src/store";
 
 export default function Detail() {
-  const { book, id } = useRouter().query;
-  const bookInfo = JSON.parse(book as string);
-
-  console.log(book, id);
+  const { bookInfo } = useBookStore();
 
   return (
     <div className={styles.content}>

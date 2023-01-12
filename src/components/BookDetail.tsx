@@ -5,8 +5,6 @@ import { KakaoBookInfo } from "src/types";
 import { StarImgList } from "src/constant";
 
 export default function BookDetail({ book }: { book: KakaoBookInfo }) {
-  console.log(moment(book.datetime).format("YYYY.MM.DD"));
-
   return (
     <div className={styles.book_detail}>
       <div className={styles.thumbnail_wrapper}>

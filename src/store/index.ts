@@ -2,7 +2,37 @@ import moment from "moment";
 import { BookList, IFilterBooks, KakaoBookInfo } from "src/types";
 import create from "zustand";
 
-export const useBookStore = create((set) => ({
+interface BookStoreType {
+  originBookList: BookList[];
+  filteredBookList: BookList[];
+  bookInfo: KakaoBookInfo;
+  filterValue: any;
+  // filterValue: {
+  //   myRating: {
+  //     id: number;
+  //     text: string;
+  //   };
+  //   avgRating: {
+  //     id: number;
+  //     text: string;
+  //   };
+  //   status: {
+  //     id: number;
+  //     text: string;
+  //   };
+  //   created: {
+  //     id: number;
+  //     text: string;
+  //     date: (string | number)[];
+  //   };
+  //   bookmark: boolean;
+  // };
+  setBookInfo: (data: KakaoBookInfo) => void;
+  setBooks: (list: BookList[]) => void;
+  filterBooks: ({ type, item }: IFilterBooks) => void;
+}
+
+export const useBookStore = create<BookStoreType>((set) => ({
   originBookList: [],
   filteredBookList: [],
   filterValue: {
@@ -12,13 +42,35 @@ export const useBookStore = create((set) => ({
     created: { id: 0, text: "없음", date: [0, ""] },
     bookmark: false,
   },
-
-  setBooks: (list: BookList[]) => {
-    set({ originBookList: [...list], filteredBookList: [...list] });
+  bookInfo: {
+    authors: [],
+    contents: "",
+    datetime: "",
+    isbn: "",
+    price: 0,
+    publisher: "",
+    sale_price: 0,
+    status: "",
+    thumbnail: "",
+    title: "",
+    translators: [],
+    url: "",
   },
 
-  filterBooks: ({ type, item }: IFilterBooks) => {
-    set((state: { filterValue: any; originBookList: never[] }) => {
+  setBookInfo: (data) => {
+    set((state) => ({ ...state, bookInfo: data }));
+  },
+
+  setBooks: (list) => {
+    set((state) => ({
+      ...state,
+      originBookList: [...list],
+      filteredBookList: [...list],
+    }));
+  },
+
+  filterBooks: ({ type, item }) => {
+    set((state) => {
       const filterVal = state.filterValue;
       filterVal[type] = item;
       return {

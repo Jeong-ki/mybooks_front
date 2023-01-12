@@ -4,10 +4,9 @@ import BookmarkClick from "src/public/image/bookmark_clicked.png";
 import Image from "next/image";
 import { useState } from "react";
 import { useBookStore } from "src/store";
-import { IFilterBooks, StoreFilterBooks } from "src/types";
 
 export default function BookmarkFilterBtn() {
-  const { filterBooks } = useBookStore() as StoreFilterBooks;
+  const { filterBooks } = useBookStore();
   const [filterBookmark, setFilterBookmark] = useState(false);
 
   const onClickFilterBookmark = () => {

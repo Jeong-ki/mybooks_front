@@ -9,25 +9,17 @@ interface Books {
 }
 
 export default function BookList({ books }: Books) {
-  const { setBookDetail } = useBookStore() as StoreSetBookDetail;
+  const { setBookInfo } = useBookStore();
 
   return (
     <>
       {books.length > 0
         ? books.map((book: KakaoBookInfo, index: number) => (
             <div key={book.isbn} className={styles.book}>
-              {/* <Link
-                href={`/detail/${encodeURIComponent(book.isbn.split(" ")[1])}`}
-                className={styles.inner_book}
-                onClick={() => setBookDetail(book)}
-              > */}
               <Link
-                href={{
-                  pathname: "/detail/[id]",
-                  query: { book: JSON.stringify(book) },
-                }}
-                as={`/detail/${encodeURIComponent(book.isbn.split(" ")[1])}`}
+                href={`/detail/${book.isbn.split(" ")[1]}`}
                 className={styles.inner_book}
+                onClick={() => setBookInfo(book)}
               >
                 {book.thumbnail ? (
                   <Image
