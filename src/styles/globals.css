@@ -1,3 +1,10 @@
+@font-face {
+  font-family: "BitBit";
+  src: url("../public/fonts/DNFBitBitTTF.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
 .screen_out {
   position: absolute;
   width: 0;
@@ -27,7 +34,7 @@ a {
 main {
   min-height: 100vh;
   /* background: orange; */
-  padding: 2.5rem 8vw;
+  padding: 2rem 12vw;
 }
 
 button {

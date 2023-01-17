@@ -1,6 +1,7 @@
 import styles from "src/styles/Detail.module.css";
 import BookDetail from "src/components/BookDetail";
 import { useBookStore } from "src/store";
+import MyReview from "src/components/MyReview";
 
 export default function Detail() {
   const { bookInfo } = useBookStore();
@@ -8,8 +9,7 @@ export default function Detail() {
   return (
     <div className={styles.content}>
       <BookDetail book={bookInfo} />
-
-      <div>책 상태 / 리뷰</div>
+      <MyReview />
 
       <div>책 소개</div>
 

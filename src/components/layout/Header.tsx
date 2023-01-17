@@ -30,15 +30,17 @@ export default function Header() {
     <header className={styles.header}>
       <ul className={styles.nav}>
         <li>
-          <h1>MyBooks</h1>
+          <Link href="/">
+            <h1>독서랍</h1>
+          </Link>
         </li>
-        <li className={styles.item}>
+        {/* <li className={styles.item}>
           <Link href="/">홈</Link>
         </li>
         <li className={styles.item}>
           <Link href="/">독서통계</Link>
         </li>
-        {/* <li className={styles.item}>
+        <li className={styles.item}>
           <a href="#">어워즈</a>
         </li> */}
       </ul>
@@ -58,8 +60,8 @@ export default function Header() {
         </button>
       </div>
       <div className={styles.menu}>
-        <button className={styles.btn1}>로그인</button>
-        <button className={styles.btn2}>회원가입</button>
+        <button className={styles.btn1}>회원가입</button>
+        <button className={styles.btn2}>로그인</button>
       </div>
     </header>
   );

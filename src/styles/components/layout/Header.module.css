@@ -1,14 +1,15 @@
 .header {
-  /* background: #666; */
+  font-family: "BitBit";
   color: #000;
   display: flex;
   justify-content: space-between; /*first default*/
   align-items: center; /*secondory default*/
-  padding: 8px 8vw;
+  padding: 4px 12vw;
   border-bottom: 1px solid #eaeaea;
 }
 .header h1 {
-  font-size: 24px;
+  font-size: 28px;
+  font-weight: 500;
   margin-right: 25px;
 }
 .nav {
@@ -45,6 +46,7 @@
 }
 
 .search input {
+  font-size: 14px;
   border-radius: 15px;
   border-color: #dfdfdf;
   width: 28vw;
@@ -68,22 +70,22 @@
 
 .menu button {
   position: relative;
-  height: 30px;
-  border-radius: 8px;
+  height: 28px;
+  border-radius: 6px;
   display: inline-flex;
   align-items: center;
-  padding: 0 10px;
-  font-size: 14px;
-  font-weight: 500;
+  padding: 0 9px;
+  font-size: 15px;
+  font-weight: 300;
   line-height: 1.5;
   cursor: pointer;
   margin-left: 8px;
+  font-family: "BitBit";
 }
 
 .menu .btn1 {
   box-sizing: border-box;
   background-color: #fff;
-  font-weight: 600;
 }
 .menu .btn2 {
   box-sizing: border-box;
@@ -94,21 +96,11 @@
 
 @media screen and (max-width: 780px) {
   .header h1 {
-    font-size: 18px;
+    font-size: 23px;
     margin-right: 16px;
   }
   .nav li a {
     font-size: 15px;
-  }
-  .menu .btn1 {
-    box-sizing: border-box;
-    background-color: #4a4a4a;
-    color: #fff;
-    border: 1px solid #4a4a4a;
-    font-weight: 500;
-  }
-  .menu .btn2 {
-    display: none;
   }
 }
 

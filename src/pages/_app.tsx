@@ -12,7 +12,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <QueryClientProvider client={queryClient}>
       <ReactQueryDevtools initialIsOpen={false} />
       <Head>
-        <title>MyBooks</title>
+        <title>독서랍</title>
         <meta name="description" content="Memo Your Algorithm" />
         <link rel="shortcut icon" type="image/x-icon" href={favicon.src} />
       </Head>
